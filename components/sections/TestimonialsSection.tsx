@@ -87,11 +87,28 @@ export function TestimonialsSection() {
             <span className="text-slate-300">Loved by developers</span>
           </motion.div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-geist text-white mb-4 sm:mb-6 leading-tight px-4 sm:px-0">
-            Trusted by teams at
+          <motion.h2
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-geist text-white mb-4 sm:mb-6 leading-tight px-4 sm:px-0 group cursor-default"
+            whileHover={{ scale: 1.02 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          >
+            <motion.span
+              className="inline-block"
+              whileHover={{ scale: 1.01 }}
+            >
+              Trusted by teams at
+            </motion.span>
             <br />
-            <span className="text-gradient-purple">world-class companies</span>
-          </h2>
+            <motion.span
+              className="text-gradient-purple hover:text-gradient-blue transition-all duration-500 inline-block"
+              whileHover={{
+                scale: 1.05,
+                textShadow: "0 0 20px rgba(139, 92, 246, 0.5)"
+              }}
+            >
+              world-class companies
+            </motion.span>
+          </motion.h2>
           <p className="text-lg sm:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
             Join thousands of developers who have transformed their workflow with Envo
           </p>
@@ -162,6 +179,8 @@ export function TestimonialsSection() {
                         <Image
                           src={testimonials[currentIndex].avatar}
                           alt={testimonials[currentIndex].name}
+                          width={96}
+                          height={96}
                           className="w-full h-full object-cover"
                         />
                       </div>
@@ -196,7 +215,7 @@ export function TestimonialsSection() {
                   onClick={() => setCurrentIndex(index)}
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.9 }}
-                  className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${index === currentIndex
+                  className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 cursor-pointer ${index === currentIndex
                     ? 'bg-electric-blue w-6 sm:w-8 glow-blue'
                     : 'bg-slate-600 hover:bg-slate-500'
                     }`}

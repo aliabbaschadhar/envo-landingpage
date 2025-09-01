@@ -118,12 +118,25 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-                Code in the
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight group cursor-default">
+                <motion.span
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  className="inline-block"
+                >
+                  Code in the
+                </motion.span>
                 <br />
-                <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent">
+                <motion.span
+                  className="bg-gradient-to-r from-blue-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent hover:from-emerald-400 hover:via-blue-400 hover:to-purple-400 transition-all duration-500 inline-block"
+                  whileHover={{
+                    scale: 1.05,
+                    textShadow: "0 0 20px rgba(59, 130, 246, 0.5)"
+                  }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                >
                   future
-                </span>
+                </motion.span>
               </h1>
             </motion.div>
 
@@ -146,30 +159,38 @@ export function HeroSection() {
               className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start px-4 sm:px-0"
             >
               <motion.div
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.05, y: -3 }}
                 whileTap={{ scale: 0.95 }}
                 className="w-full sm:w-auto"
               >
                 <Link href="/signup">
                   <Button
                     size="lg"
-                    className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-xl shadow-lg shadow-blue-500/25 transition-all duration-300 group"
+                    className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-xl shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-300 group relative overflow-hidden"
                   >
-                    Start Building Free
-                    <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
+                    <span className="relative z-10 flex items-center">
+                      Start Building Free
+                      <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                    {/* Shimmer effect */}
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                      animate={{ x: [-100, 100] }}
+                      transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+                    />
                   </Button>
                 </Link>
               </motion.div>
 
               <motion.div
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.05, y: -3 }}
                 whileTap={{ scale: 0.95 }}
                 className="w-full sm:w-auto"
               >
                 <Button
                   variant="outline"
                   size="lg"
-                  className="w-full sm:w-auto bg-slate-800/60 backdrop-blur-sm border-slate-600/50 hover:border-emerald-400/50 text-white hover:text-emerald-400 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-xl group transition-all duration-300"
+                  className="w-full sm:w-auto bg-slate-800/60 backdrop-blur-sm border-slate-600/50 hover:border-emerald-400/50 hover:bg-slate-700/60 text-white hover:text-emerald-400 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-xl group transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/20"
                 >
                   <Play className="mr-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:scale-110 transition-transform" />
                   Watch Demo

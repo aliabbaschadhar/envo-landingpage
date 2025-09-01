@@ -1,21 +1,92 @@
 "use client";
 
 import { motion } from 'framer-motion';
+import * as icons from 'simple-icons';
+import { Cloud } from 'lucide-react';
+
+// Simple Icons React components
+const ReactIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+    <path d={icons.siReact.path} />
+  </svg>
+);
+
+const TypeScriptIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+    <path d={icons.siTypescript.path} />
+  </svg>
+);
+
+const NodeJsIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+    <path d={icons.siNodedotjs.path} />
+  </svg>
+);
+
+const PythonIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+    <path d={icons.siPython.path} />
+  </svg>
+);
+
+const VueIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+    <path d={icons.siVuedotjs.path} />
+  </svg>
+);
+
+const AngularIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+    <path d={icons.siAngular.path} />
+  </svg>
+);
+
+const SvelteIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+    <path d={icons.siSvelte.path} />
+  </svg>
+);
+
+const NextJsIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+    <path d={icons.siNextdotjs.path} />
+  </svg>
+);
+
+const ViteIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+    <path d={icons.siVite.path} />
+  </svg>
+);
+
+const DockerIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+    <path d={icons.siDocker.path} />
+  </svg>
+);
+
+const KubernetesIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+    <path d={icons.siKubernetes.path} />
+  </svg>
+);
+
+const AWSIcon = () => <Cloud className="w-full h-full" />;
 
 export function TechLogos() {
   const technologies = [
-    { name: 'React', icon: '⚛️', color: '#61DAFB' },
-    { name: 'TypeScript', icon: 'TS', color: '#3178C6' },
-    { name: 'Node.js', icon: '🟢', color: '#339933' },
-    { name: 'Python', icon: '🐍', color: '#3776AB' },
-    { name: 'Vue.js', icon: 'V', color: '#4FC08D' },
-    { name: 'Angular', icon: 'A', color: '#DD0031' },
-    { name: 'Svelte', icon: 'S', color: '#FF3E00' },
-    { name: 'Next.js', icon: '▲', color: '#000000' },
-    { name: 'Vite', icon: '⚡', color: '#646CFF' },
-    { name: 'Docker', icon: '🐳', color: '#2496ED' },
-    { name: 'Kubernetes', icon: '☸️', color: '#326CE5' },
-    { name: 'AWS', icon: '☁️', color: '#FF9900' },
+    { name: 'React', icon: ReactIcon, color: '#61DAFB' },
+    { name: 'TypeScript', icon: TypeScriptIcon, color: '#3178C6' },
+    { name: 'Node.js', icon: NodeJsIcon, color: '#339933' },
+    { name: 'Python', icon: PythonIcon, color: '#3776AB' },
+    { name: 'Vue.js', icon: VueIcon, color: '#4FC08D' },
+    { name: 'Angular', icon: AngularIcon, color: '#DD0031' },
+    { name: 'Svelte', icon: SvelteIcon, color: '#FF3E00' },
+    { name: 'Next.js', icon: NextJsIcon, color: '#000000' },
+    { name: 'Vite', icon: ViteIcon, color: '#646CFF' },
+    { name: 'Docker', icon: DockerIcon, color: '#2496ED' },
+    { name: 'Kubernetes', icon: KubernetesIcon, color: '#326CE5' },
+    { name: 'AWS', icon: AWSIcon, color: '#FF9900' },
   ];
 
   // Duplicate for seamless scroll
@@ -69,7 +140,7 @@ export function TechLogos() {
                       className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-lg lg:rounded-xl flex items-center justify-center text-white font-bold text-sm sm:text-base lg:text-lg mb-1 sm:mb-2 shadow-lg"
                       style={{ backgroundColor: tech.color }}
                     >
-                      {tech.icon}
+                      <tech.icon />
                     </div>
                   </div>
                   <p className="text-center mt-2 sm:mt-3 text-xs sm:text-sm text-slate-400 group-hover:text-white transition-colors font-medium">

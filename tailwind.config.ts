@@ -1,7 +1,6 @@
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
-  darkMode: ['class'],
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -13,28 +12,15 @@ const config: Config = {
         // Modern Dark Theme
         'deep-navy': '#0a0e1a',
         'midnight-blue': '#000814',
-        'slate-900': '#0f172a',
-        'slate-800': '#1e293b',
-        'slate-700': '#334155',
-        'slate-600': '#475569',
-        'slate-500': '#64748b',
-        'slate-400': '#94a3b8',
-        'slate-300': '#cbd5e1',
-        'slate-200': '#e2e8f0',
-        'slate-100': '#f1f5f9',
-
-        // Accent Colors
         'electric-blue': '#3b82f6',
         'electric-purple': '#8b5cf6',
         'electric-green': '#10b981',
         'electric-cyan': '#06b6d4',
         'electric-pink': '#ec4899',
-
-        // Glass Effects
+        'electric-orange': '#f97316',
+        'electric-yellow': '#eab308',
         'glass-white': 'rgba(255, 255, 255, 0.05)',
         'glass-border': 'rgba(255, 255, 255, 0.1)',
-
-        // Legacy colors for compatibility
         'lustrous-black': '#0a0e1a',
         'deep-charcoal': '#1e293b',
         'soft-white': '#f8fafc',
@@ -87,15 +73,15 @@ const config: Config = {
         },
       },
       fontFamily: {
-        'sans': ['var(--font-geist-sans)', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-        'mono': ['var(--font-geist-mono)', 'ui-monospace', 'SFMono-Regular', 'Monaco', 'Consolas', 'monospace'],
+        sans: ['var(--font-geist-sans)', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        mono: ['var(--font-geist-mono)', 'ui-monospace', 'SFMono-Regular', 'Monaco', 'Consolas', 'monospace'],
       },
       fontSize: {
-        'xs': ['0.75rem', { lineHeight: '1rem' }],
-        'sm': ['0.875rem', { lineHeight: '1.25rem' }],
-        'base': ['1rem', { lineHeight: '1.5rem' }],
-        'lg': ['1.125rem', { lineHeight: '1.75rem' }],
-        'xl': ['1.25rem', { lineHeight: '1.75rem' }],
+        xs: ['0.75rem', { lineHeight: '1rem' }],
+        sm: ['0.875rem', { lineHeight: '1.25rem' }],
+        base: ['1rem', { lineHeight: '1.5rem' }],
+        lg: ['1.125rem', { lineHeight: '1.75rem' }],
+        xl: ['1.25rem', { lineHeight: '1.75rem' }],
         '2xl': ['1.5rem', { lineHeight: '2rem' }],
         '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
         '4xl': ['2.25rem', { lineHeight: '2.5rem' }],
@@ -121,20 +107,20 @@ const config: Config = {
         sm: 'calc(var(--radius) - 4px)',
       },
       backdropBlur: {
-        'xs': '2px',
-        'sm': '4px',
-        'md': '8px',
-        'lg': '16px',
-        'xl': '24px',
+        xs: '2px',
+        sm: '4px',
+        md: '8px',
+        lg: '16px',
+        xl: '24px',
         '2xl': '40px',
         '3xl': '64px',
       },
       blur: {
-        'xs': '2px',
-        'sm': '4px',
-        'md': '8px',
-        'lg': '16px',
-        'xl': '24px',
+        xs: '2px',
+        sm: '4px',
+        md: '8px',
+        lg: '16px',
+        xl: '24px',
         '2xl': '40px',
         '3xl': '64px',
         '4xl': '128px',
@@ -152,7 +138,7 @@ const config: Config = {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-50%)' },
         },
-        'float': {
+        float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-20px)' },
         },
@@ -170,7 +156,7 @@ const config: Config = {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'scroll-logos': 'scroll-logos 30s linear infinite',
-        'float': 'float 6s ease-in-out infinite',
+        float: 'float 6s ease-in-out infinite',
         'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
         'mesh-move': 'mesh-move 20s ease-in-out infinite',
       },
@@ -178,10 +164,11 @@ const config: Config = {
         'glow-blue': '0 0 20px rgba(59, 130, 246, 0.5)',
         'glow-purple': '0 0 20px rgba(139, 92, 246, 0.5)',
         'glow-green': '0 0 20px rgba(16, 185, 129, 0.5)',
-        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+        glass: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
       },
     },
   },
   plugins: [require('tailwindcss-animate')],
 };
+
 export default config;

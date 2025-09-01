@@ -68,7 +68,7 @@ export function Footer() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <Link href="/" className="flex items-center space-x-3 group mb-6">
+              <Link href="/" className="flex items-center space-x-3 group mb-6 cursor-pointer">
                 <motion.div
                   whileHover={{ rotate: 180, scale: 1.1 }}
                   transition={{ duration: 0.4 }}
@@ -80,9 +80,9 @@ export function Footer() {
                   Envo
                 </span>
               </Link>
-              
+
               <p className="text-slate-400 leading-relaxed mb-8 max-w-sm">
-                The modern coding environment that adapts to your workflow. 
+                The modern coding environment that adapts to your workflow.
                 Build faster, collaborate better, deploy instantly.
               </p>
 
@@ -155,9 +155,9 @@ export function Footer() {
               { name: 'Privacy Policy', href: '/privacy' },
               { name: 'Cookie Policy', href: '/cookies' },
             ].map((link) => (
-              <Link 
+              <Link
                 key={link.name}
-                href={link.href} 
+                href={link.href}
                 className="text-slate-400 hover:text-white text-sm transition-colors font-medium"
               >
                 {link.name}

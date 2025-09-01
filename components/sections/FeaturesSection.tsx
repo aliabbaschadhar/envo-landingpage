@@ -125,11 +125,28 @@ export function FeaturesSection() {
             <span className="text-slate-300">Everything you need</span>
           </motion.div>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-geist text-white mb-6 leading-tight">
-            Build amazing apps with
+          <motion.h2
+            className="text-4xl md:text-5xl lg:text-6xl font-bold font-geist text-white mb-6 leading-tight group cursor-default"
+            whileHover={{ scale: 1.02 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          >
+            <motion.span
+              className="inline-block"
+              whileHover={{ scale: 1.01 }}
+            >
+              Build amazing apps with
+            </motion.span>
             <br />
-            <span className="text-gradient-blue">professional tools</span>
-          </h2>
+            <motion.span
+              className="text-gradient-blue hover:text-gradient-purple transition-all duration-500 inline-block"
+              whileHover={{
+                scale: 1.05,
+                textShadow: "0 0 20px rgba(59, 130, 246, 0.5)"
+              }}
+            >
+              professional tools
+            </motion.span>
+          </motion.h2>
           <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
             A complete development platform designed for modern teams and individual developers who demand excellence
           </p>
@@ -158,9 +175,13 @@ export function FeaturesSection() {
                 </motion.div>
 
                 {/* Content */}
-                <h3 className="text-xl font-semibold font-geist text-white mb-4 group-hover:text-electric-blue transition-colors duration-300">
+                <motion.h3
+                  className="text-xl font-semibold font-geist text-white mb-4 group-hover:text-electric-blue transition-colors duration-300"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                >
                   {feature.title}
-                </h3>
+                </motion.h3>
                 <p className="text-slate-400 group-hover:text-slate-300 transition-colors duration-300 leading-relaxed">
                   {feature.description}
                 </p>

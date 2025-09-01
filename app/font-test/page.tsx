@@ -3,12 +3,12 @@ export default function FontTest() {
     <div className="min-h-screen bg-deep-navy text-white p-8">
       <div className="max-w-4xl mx-auto space-y-8">
         <h1 className="text-4xl font-bold font-sans mb-4">
-          Geist Sans Font Test
+          Geist Sans Font Test (font-sans)
         </h1>
 
         <div className="space-y-4">
-          <h2 className="text-2xl font-semibold font-geist-sans">
-            This text uses Geist Sans via custom class
+          <h2 className="text-2xl font-semibold" style={{ fontFamily: 'var(--font-geist-sans)' }}>
+            This text uses Geist Sans via CSS variable
           </h2>
 
           <p className="text-lg font-sans">
@@ -16,8 +16,8 @@ export default function FontTest() {
             The font should look modern, clean, and highly readable with excellent spacing.
           </p>
 
-          <div className="font-geist-mono bg-slate-800 p-4 rounded-lg">
-            <h3 className="text-lg font-semibold mb-2">Code Example (Geist Mono):</h3>
+          <div className="font-mono bg-slate-800 p-4 rounded-lg">
+            <h3 className="text-lg font-semibold mb-2">Code Example (Geist Mono via font-mono):</h3>
             <pre className="text-sm">
               {`function welcomeToEnvo() {
   return {

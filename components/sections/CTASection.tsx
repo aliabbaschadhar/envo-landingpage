@@ -90,13 +90,25 @@ export function CTASection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold font-geist text-white mb-6 leading-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold font-geist text-white mb-6 leading-tight group cursor-default"
+            whileHover={{ scale: 1.02 }}
           >
-            Ready to revolutionize
+            <motion.span
+              className="inline-block"
+              whileHover={{ scale: 1.01 }}
+            >
+              Ready to revolutionize
+            </motion.span>
             <br />
-            <span className="text-gradient-rainbow">
+            <motion.span
+              className="text-gradient-rainbow hover:text-gradient-blue transition-all duration-500 inline-block"
+              whileHover={{
+                scale: 1.05,
+                textShadow: "0 0 20px rgba(59, 130, 246, 0.5)"
+              }}
+            >
               your development workflow?
-            </span>
+            </motion.span>
           </motion.h2>
 
           {/* Description */}
@@ -120,28 +132,36 @@ export function CTASection() {
             className="flex flex-col sm:flex-row gap-6 justify-center mb-12"
           >
             <motion.div
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.05, y: -3 }}
               whileTap={{ scale: 0.95 }}
             >
               <Link href="/signup">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-electric-green to-emerald-400 hover:from-emerald-400 hover:to-electric-green text-deep-navy font-bold px-10 py-4 text-lg rounded-xl glow-green btn-ripple group transition-all duration-300"
+                  className="bg-gradient-to-r from-electric-green to-emerald-400 hover:from-emerald-400 hover:to-electric-green text-deep-navy font-bold px-10 py-4 text-lg rounded-xl glow-green btn-ripple group transition-all duration-300 hover:shadow-xl hover:shadow-green-400/30 relative overflow-hidden"
                 >
-                  Start Free Trial
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  <span className="relative z-10 flex items-center">
+                    Start Free Trial
+                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                  {/* Shimmer effect */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                    animate={{ x: [-100, 100] }}
+                    transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+                  />
                 </Button>
               </Link>
             </motion.div>
 
             <motion.div
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.05, y: -3 }}
               whileTap={{ scale: 0.95 }}
             >
               <Button
                 variant="outline"
                 size="lg"
-                className="glass-panel border-white/20 hover:border-electric-blue/50 text-white hover:text-electric-blue px-10 py-4 text-lg rounded-xl font-semibold transition-all duration-300"
+                className="glass-panel border-white/20 hover:border-electric-blue/50 hover:bg-white/5 text-white hover:text-electric-blue px-10 py-4 text-lg rounded-xl font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-blue-400/20"
               >
                 Schedule Demo
               </Button>
