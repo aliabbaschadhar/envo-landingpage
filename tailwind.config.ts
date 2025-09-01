@@ -22,18 +22,18 @@ const config: Config = {
         'slate-300': '#cbd5e1',
         'slate-200': '#e2e8f0',
         'slate-100': '#f1f5f9',
-        
+
         // Accent Colors
         'electric-blue': '#3b82f6',
         'electric-purple': '#8b5cf6',
         'electric-green': '#10b981',
         'electric-cyan': '#06b6d4',
         'electric-pink': '#ec4899',
-        
+
         // Glass Effects
         'glass-white': 'rgba(255, 255, 255, 0.05)',
         'glass-border': 'rgba(255, 255, 255, 0.1)',
-        
+
         // Legacy colors for compatibility
         'lustrous-black': '#0a0e1a',
         'deep-charcoal': '#1e293b',
@@ -43,7 +43,7 @@ const config: Config = {
         'codesandbox-purple': '#8b5cf6',
         'replit-orange': '#f97316',
         'lime': '#84cc16',
-        
+
         // shadcn/ui colors
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
@@ -87,8 +87,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        'sans': ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-        'mono': ['ui-monospace', 'SFMono-Regular', 'Monaco', 'Consolas', 'monospace'],
+        'sans': ['var(--font-geist-sans)', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        'mono': ['var(--font-geist-mono)', 'ui-monospace', 'SFMono-Regular', 'Monaco', 'Consolas', 'monospace'],
       },
       fontSize: {
         'xs': ['0.75rem', { lineHeight: '1rem' }],
@@ -119,6 +119,25 @@ const config: Config = {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
+      },
+      backdropBlur: {
+        'xs': '2px',
+        'sm': '4px',
+        'md': '8px',
+        'lg': '16px',
+        'xl': '24px',
+        '2xl': '40px',
+        '3xl': '64px',
+      },
+      blur: {
+        'xs': '2px',
+        'sm': '4px',
+        'md': '8px',
+        'lg': '16px',
+        'xl': '24px',
+        '2xl': '40px',
+        '3xl': '64px',
+        '4xl': '128px',
       },
       keyframes: {
         'accordion-down': {

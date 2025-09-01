@@ -36,18 +36,128 @@
   * {
     @apply border-border;
   }
-  
+
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
-    @apply bg-deep-navy text-white font-sans;
-    background-image: 
+    @apply bg-deep-navy text-white;
+    font-family: var(--font-geist-sans), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-image:
       radial-gradient(at 40% 20%, rgba(59, 130, 246, 0.1) 0px, transparent 50%),
       radial-gradient(at 80% 0%, rgba(139, 92, 246, 0.1) 0px, transparent 50%),
       radial-gradient(at 0% 50%, rgba(16, 185, 129, 0.1) 0px, transparent 50%);
+    /* Ensure backdrop-blur support */
+    -webkit-backdrop-filter: blur(0);
+    backdrop-filter: blur(0);
   }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.5);
+}
+
+/* Glass morphism effects */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Blur utilities */
+.blur-light {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.blur-medium {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.blur-heavy {
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+/* Animation utilities */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6, #10b981);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Enhanced blur backgrounds */
+.blur-orb {
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%);
+  filter: blur(40px);
+}
+
+.blur-orb-purple {
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%);
+  filter: blur(40px);
+}
+
+.blur-orb-green {
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.3) 0%, transparent 70%);
+  filter: blur(40px);
 }
 
 /* Custom scrollbar */
@@ -81,6 +191,28 @@
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+.glass-panel-heavy {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(32px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Section blur utilities */
+.section-blur-light {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.section-blur-medium {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.section-blur-heavy {
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+}
+
 /* Glow effects */
 .glow-blue {
   box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
@@ -96,7 +228,7 @@
 
 /* Mesh background animation */
 .mesh-background {
-  background: 
+  background:
     radial-gradient(at 40% 20%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
     radial-gradient(at 80% 0%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
     radial-gradient(at 0% 50%, rgba(16, 185, 129, 0.15) 0px, transparent 50%);
@@ -104,6 +236,14 @@
 }
 
 /* Typography utilities */
+.font-geist-sans {
+  font-family: var(--font-geist-sans), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.font-geist-mono {
+  font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Monaco, Consolas, monospace;
+}
+
 .text-gradient-blue {
   background: linear-gradient(135deg, #3b82f6, #06b6d4);
   -webkit-background-clip: text;

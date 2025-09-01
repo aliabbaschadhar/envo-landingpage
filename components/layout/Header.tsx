@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Code2, Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
@@ -24,11 +24,10 @@ export function Header() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'glass-panel border-b border-white/10' 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+          ? 'glass-panel border-b border-white/10'
           : 'bg-transparent'
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
@@ -70,8 +69,8 @@ export function Header() {
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center space-x-4">
             <Link href="/signin">
-              <Button 
-                variant="ghost" 
+              <Button
+                variant="ghost"
                 className="text-slate-300 hover:text-white hover:bg-white/5 font-medium transition-all duration-300"
               >
                 Sign In

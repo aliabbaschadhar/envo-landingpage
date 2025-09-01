@@ -7,9 +7,9 @@ import { Button } from '@/components/ui/button';
 
 export function CTASection() {
   return (
-    <section className="py-32 relative">
-      {/* Background Elements */}
-      <div className="absolute inset-0">
+    <section className="py-32 relative overflow-hidden">
+      {/* Background Elements with enhanced blur */}
+      <div className="absolute inset-0 backdrop-blur-[2px]">
         <motion.div
           className="absolute top-1/2 left-1/2 w-[1000px] h-[500px] rounded-full opacity-10"
           style={{
@@ -23,6 +23,32 @@ export function CTASection() {
             duration: 30,
             repeat: Infinity,
             ease: "linear",
+          }}
+        />
+        <motion.div
+          className="absolute top-0 left-1/4 w-96 h-96 bg-electric-purple/10 rounded-full blur-3xl"
+          animate={{
+            y: [0, -100, 0],
+            x: [0, 50, 0],
+            scale: [1, 1.3, 1],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        <motion.div
+          className="absolute bottom-0 right-1/4 w-96 h-96 bg-electric-green/10 rounded-full blur-3xl"
+          animate={{
+            y: [0, 80, 0],
+            x: [0, -30, 0],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 18,
+            repeat: Infinity,
+            ease: "easeInOut",
           }}
         />
       </div>
@@ -81,7 +107,7 @@ export function CTASection() {
             viewport={{ once: true }}
             className="text-xl md:text-2xl text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed"
           >
-            Join millions of developers building the future with Envo. 
+            Join millions of developers building the future with Envo.
             Start your free trial today—no credit card required.
           </motion.p>
 
@@ -98,7 +124,7 @@ export function CTASection() {
               whileTap={{ scale: 0.95 }}
             >
               <Link href="/signup">
-                <Button 
+                <Button
                   size="lg"
                   className="bg-gradient-to-r from-electric-green to-emerald-400 hover:from-emerald-400 hover:to-electric-green text-deep-navy font-bold px-10 py-4 text-lg rounded-xl glow-green btn-ripple group transition-all duration-300"
                 >
@@ -112,7 +138,7 @@ export function CTASection() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Button 
+              <Button
                 variant="outline"
                 size="lg"
                 className="glass-panel border-white/20 hover:border-electric-blue/50 text-white hover:text-electric-blue px-10 py-4 text-lg rounded-xl font-semibold transition-all duration-300"

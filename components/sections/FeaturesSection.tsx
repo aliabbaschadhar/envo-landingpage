@@ -1,15 +1,15 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { 
-  Zap, 
-  Users, 
-  Shield, 
-  Rocket, 
-  GitBranch, 
+import {
+  Zap,
+  Users,
+  Shield,
+  Rocket,
+  GitBranch,
   Terminal,
   Cloud,
-  Sparkles 
+  Sparkles
 } from 'lucide-react';
 
 export function FeaturesSection() {
@@ -73,8 +73,39 @@ export function FeaturesSection() {
   ];
 
   return (
-    <section className="py-32 relative">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section className="py-32 relative overflow-hidden">
+      {/* Background blur effects */}
+      <div className="absolute inset-0 bg-gradient-to-b from-deep-navy/80 via-deep-navy/60 to-deep-navy/80 backdrop-blur-[1px]" />
+
+      {/* Floating background elements */}
+      <div className="absolute inset-0">
+        <motion.div
+          className="absolute top-1/4 left-1/5 w-72 h-72 bg-electric-blue/5 rounded-full blur-3xl"
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.5, 0.3],
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        <motion.div
+          className="absolute bottom-1/4 right-1/5 w-72 h-72 bg-electric-purple/5 rounded-full blur-3xl"
+          animate={{
+            scale: [1, 1.3, 1],
+            opacity: [0.3, 0.4, 0.3],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -93,7 +124,7 @@ export function FeaturesSection() {
             <Sparkles className="w-4 h-4 text-electric-blue" />
             <span className="text-slate-300">Everything you need</span>
           </motion.div>
-          
+
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-geist text-white mb-6 leading-tight">
             Build amazing apps with
             <br />
